@@ -181,6 +181,10 @@ export class EssenceWindow {
 		const isFullscreenOrMaximized = (this.currentWindowMode === WindowMode.Maximized || this.currentWindowMode === WindowMode.Fullscreen);
 
 		const options: Electron.BrowserWindowOptions = {
+			/* Essence */
+			frame: false,
+			titleBarStyle: 'default',
+
 			width: this.windowState.width,
 			height: this.windowState.height,
 			x: this.windowState.x,
@@ -208,30 +212,12 @@ export class EssenceWindow {
 			useNativeTabs = true;
 		}
 
-		let useCustomTitleStyle = false;
-		if (platform.isMacintosh && (!windowConfig || !windowConfig.titleBarStyle || windowConfig.titleBarStyle === 'custom')) {
-			const isDev = !this.environmentService.isBuilt || !!config.extensionDevelopmentPath;
-			if (!isDev) {
-				useCustomTitleStyle = true; // not enabled when developing due to https://github.com/electron/electron/issues/3647
-			}
-		}
-
-		if (useNativeTabs) {
-			useCustomTitleStyle = false; // native tabs on sierra do not work with custom title style
-		}
-
-		if (useCustomTitleStyle) {
-			options.titleBarStyle = 'hidden';
-			this.hiddenTitleBarStyle = true;
-		}
+		/* Essence */
+		this.hiddenTitleBarStyle = false;
 
 		// Create the browser window.
 		this._win = new BrowserWindow(options);
 		this._id = this._win.id;
-
-		if (useCustomTitleStyle) {
-			this._win.setSheetOffset(22); // offset dialogs by the height of the custom title bar if we have any
-		}
 
 		// Set relaunch command
 		if (platform.isWindows && product.win32AppUserModelId && typeof this._win.setAppDetails === 'function') {
