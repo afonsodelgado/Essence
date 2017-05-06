@@ -3,6 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
+/* Essence */
+body.draggable:after {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000000;
+
+	-webkit-app-region: drag;
+	cursor: move;
+}
+
 .monaco-shell {
 	height: 100%;
 	width: 100%;

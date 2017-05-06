@@ -200,6 +200,48 @@ export class ElectronWindow extends Themable {
 			DOM.EventHelper.stop(e);
 		});
 
+
+
+
+		/* Essence */
+		// Allow for easy draggability with the frameless window with META+CTRL+ALT
+		let isDraggable = false, dragTimeout, checkRate = 9;
+
+		window.document.body.addEventListener(DOM.EventType.KEY_DOWN, (e: KeyboardEvent) => {
+			if (e.altKey === true && e.ctrlKey === true && e.metaKey === true) {
+				isDraggable = true;
+
+				window.document.body.classList.add('draggable');
+			}
+		});
+
+		window.document.body.addEventListener(DOM.EventType.KEY_UP, (e: KeyboardEvent) => {
+			if (isDraggable === true) {
+				isDraggable = false;
+				clearTimeout(dragTimeout);
+
+				window.document.body.classList.remove('draggable');
+			}
+		});
+
+		window.document.body.addEventListener(DOM.EventType.MOUSE_UP, (e: MouseEvent) => {
+			// The KEY_UP event is not fired after a window drag
+
+			if (isDraggable === false) {
+				return;
+			}
+
+			clearTimeout(dragTimeout);
+			dragTimeout = setTimeout(() => {
+				isDraggable = false;
+
+				window.document.body.classList.remove('draggable');
+			}, checkRate);
+		});
+
+
+
+
 		// Handle window.open() calls
 		const $this = this;
 		(<any>window).open = function (url: string, target: string, features: string, replace: boolean) {
