@@ -7,7 +7,7 @@
 
 import { ipcMain as ipc, app } from 'electron';
 import { TPromise, TValueCallback } from 'vs/base/common/winjs.base';
-import { ReadyState, VSCodeWindow } from 'vs/code/electron-main/window';
+import { ReadyState, EssenceWindow } from 'vs/code/electron-main/window';
 import { IEnvironmentService } from 'vs/platform/environment/common/environment';
 import { ILogService } from 'vs/code/electron-main/log';
 import { IStorageService } from 'vs/code/electron-main/storage';
@@ -43,12 +43,12 @@ export interface ILifecycleService {
 	 * is called even when the window prevents the closing. We want an event that truly fires
 	 * before the window gets closed for real.
 	 */
-	onBeforeWindowClose: Event<VSCodeWindow>;
+	onBeforeWindowClose: Event<EssenceWindow>;
 
 	ready(): void;
-	registerWindow(vscodeWindow: VSCodeWindow): void;
+	registerWindow(vscodeWindow: EssenceWindow): void;
 
-	unload(vscodeWindow: VSCodeWindow, reason: UnloadReason): TPromise<boolean /* veto */>;
+	unload(vscodeWindow: EssenceWindow, reason: UnloadReason): TPromise<boolean /* veto */>;
 
 	relaunch(options?: { addArgs?: string[], removeArgs?: string[] });
 
@@ -74,8 +74,8 @@ export class LifecycleService implements ILifecycleService {
 	private _onBeforeQuit = new Emitter<void>();
 	onBeforeQuit: Event<void> = this._onBeforeQuit.event;
 
-	private _onBeforeWindowClose = new Emitter<VSCodeWindow>();
-	onBeforeWindowClose: Event<VSCodeWindow> = this._onBeforeWindowClose.event;
+	private _onBeforeWindowClose = new Emitter<EssenceWindow>();
+	onBeforeWindowClose: Event<EssenceWindow> = this._onBeforeWindowClose.event;
 
 	constructor(
 		@IEnvironmentService private environmentService: IEnvironmentService,
@@ -132,7 +132,7 @@ export class LifecycleService implements ILifecycleService {
 		});
 	}
 
-	public registerWindow(vscodeWindow: VSCodeWindow): void {
+	public registerWindow(vscodeWindow: EssenceWindow): void {
 
 		// Window Before Closing: Main -> Renderer
 		vscodeWindow.win.on('close', (e) => {
@@ -163,7 +163,7 @@ export class LifecycleService implements ILifecycleService {
 		});
 	}
 
-	public unload(vscodeWindow: VSCodeWindow, reason: UnloadReason): TPromise<boolean /* veto */> {
+	public unload(vscodeWindow: EssenceWindow, reason: UnloadReason): TPromise<boolean /* veto */> {
 
 		// Always allow to unload a window that is not yet ready
 		if (vscodeWindow.readyState !== ReadyState.READY) {

@@ -69,7 +69,7 @@ export interface IUntitledEditorService {
 	 * if the provided resource exists already as untitled input.
 	 *
 	 * It is valid to pass in a file resource. In that case the path will be used as identifier.
-	 * The use case is to be able to create a new file with a specific path with VSCode.
+	 * The use case is to be able to create a new file with a specific path with Essence.
 	 */
 	createOrGet(resource?: URI, modeId?: string, initialValue?: string): UntitledEditorInput;
 

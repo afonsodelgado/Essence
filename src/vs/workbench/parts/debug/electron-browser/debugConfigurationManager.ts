@@ -75,11 +75,11 @@ export const debuggersExtPoint = extensionsRegistry.ExtensionsRegistry.registerE
 				type: 'array'
 			},
 			adapterExecutableCommand: {
-				description: nls.localize('vscode.extension.contributes.debuggers.adapterExecutableCommand', "If specified VS Code will call this command to determine the executable path of the debug adapter and the arguments to pass."),
+				description: nls.localize('vscode.extension.contributes.debuggers.adapterExecutableCommand', "If specified Essence will call this command to determine the executable path of the debug adapter and the arguments to pass."),
 				type: 'string'
 			},
 			startSessionCommand: {
-				description: nls.localize('vscode.extension.contributes.debuggers.startSessionCommand', "If specified VS Code will call this command for the \"debug\" or \"run\" actions targeted for this extension."),
+				description: nls.localize('vscode.extension.contributes.debuggers.startSessionCommand', "If specified Essence will call this command for the \"debug\" or \"run\" actions targeted for this extension."),
 				type: 'string'
 			},
 			configurationSnippets: {

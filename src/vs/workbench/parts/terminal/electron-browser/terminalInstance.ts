@@ -703,7 +703,7 @@ export class TerminalInstance implements ITerminalInstance {
 
 	private _setCursorStyle(style: string): void {
 		if (this._xterm && this._xterm.getOption('cursorStyle') !== style) {
-			// 'line' is used instead of bar in VS Code to be consistent with editor.cursorStyle
+			// 'line' is used instead of bar in Essence to be consistent with editor.cursorStyle
 			const xtermOption = style === 'line' ? 'bar' : style;
 			this._xterm.setOption('cursorStyle', xtermOption);
 		}

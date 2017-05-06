@@ -13,7 +13,7 @@ import { IWindowsService } from 'vs/platform/windows/common/windows';
 import { WindowsChannel } from 'vs/platform/windows/common/windowsIpc';
 import { WindowsService } from 'vs/platform/windows/electron-main/windowsService';
 import { ILifecycleService } from 'vs/code/electron-main/lifecycle';
-import { VSCodeMenu } from 'vs/code/electron-main/menus';
+import { EssenceMenu } from 'vs/code/electron-main/menus';
 import { getShellEnvironment } from 'vs/code/electron-main/shellEnv';
 import { IUpdateService } from 'vs/platform/update/common/update';
 import { UpdateChannel } from 'vs/platform/update/common/updateIpc';
@@ -48,7 +48,7 @@ import { IDisposable, dispose } from 'vs/base/common/lifecycle';
 import { ConfigurationService } from 'vs/platform/configuration/node/configurationService';
 import { TPromise } from "vs/base/common/winjs.base";
 
-export class VSCodeApplication {
+export class EssenceApplication {
 	private toDispose: IDisposable[];
 	private windowsMainService: IWindowsMainService;
 
@@ -126,7 +126,7 @@ export class VSCodeApplication {
 	}
 
 	public startup(): void {
-		this.logService.log('Starting VS Code in verbose mode');
+		this.logService.log('Starting Essence in verbose mode');
 		this.logService.log(`from: ${this.environmentService.appRoot}`);
 		this.logService.log('args:', this.environmentService.args);
 
@@ -259,7 +259,7 @@ export class VSCodeApplication {
 		}
 
 		// Install Menu
-		appInstantiationService.createInstance(VSCodeMenu);
+		appInstantiationService.createInstance(EssenceMenu);
 
 		// Jump List
 		this.windowsMainService.updateWindowsJumpList();

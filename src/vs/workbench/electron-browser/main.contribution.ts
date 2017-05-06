@@ -235,7 +235,7 @@ Note that there can still be cases where this setting is ignored (e.g. when usin
 \${activeEditorLong}: e.g. /Users/Development/myProject/myFolder/myFile.txt
 \${rootName}: e.g. myProject
 \${rootPath}: e.g. /Users/Development/myProject
-\${appName}: e.g. VS Code
+\${appName}: e.g. Essence
 \${dirty}: a dirty indicator if the active editor is dirty
 \${separator}: a conditional separator (" - ") that only shows when surrounded by variables with values`)
 	},

@@ -12,7 +12,7 @@ import { IEnvironmentService } from 'vs/platform/environment/common/environment'
 import { ipcMain as ipc, app, shell, dialog, Menu, MenuItem } from 'electron';
 import { OpenContext } from 'vs/code/common/windows';
 import { IWindowsMainService } from 'vs/code/electron-main/windows';
-import { VSCodeWindow } from 'vs/code/electron-main/window';
+import { EssenceWindow } from 'vs/code/electron-main/window';
 import { IConfigurationService } from 'vs/platform/configuration/common/configuration';
 import { IStorageService } from 'vs/code/electron-main/storage';
 import { IFilesConfiguration, AutoSaveConfiguration } from 'vs/platform/files/common/files';
@@ -122,7 +122,7 @@ class KeybindingsResolver {
 		this.windowsService.onWindowReload(() => this.resolveKeybindings());
 	}
 
-	private resolveKeybindings(win: VSCodeWindow = this.windowsService.getLastActiveWindow()): void {
+	private resolveKeybindings(win: EssenceWindow = this.windowsService.getLastActiveWindow()): void {
 		if (this.commandIds.size && win) {
 			const commandIds = [];
 			this.commandIds.forEach(id => commandIds.push(id));
@@ -145,7 +145,7 @@ class KeybindingsResolver {
 
 const telemetryFrom = 'menu';
 
-export class VSCodeMenu {
+export class EssenceMenu {
 
 	private static MAX_MENU_RECENT_ENTRIES = 10;
 
@@ -495,7 +495,7 @@ export class VSCodeMenu {
 		if (folders.length > 0) {
 			openRecentMenu.append(__separator__());
 
-			for (let i = 0; i < VSCodeMenu.MAX_MENU_RECENT_ENTRIES && i < folders.length; i++) {
+			for (let i = 0; i < EssenceMenu.MAX_MENU_RECENT_ENTRIES && i < folders.length; i++) {
 				openRecentMenu.append(this.createOpenRecentMenuItem(folders[i], 'openRecentFolder'));
 			}
 		}
@@ -504,7 +504,7 @@ export class VSCodeMenu {
 		if (files.length > 0) {
 			openRecentMenu.append(__separator__());
 
-			for (let i = 0; i < VSCodeMenu.MAX_MENU_RECENT_ENTRIES && i < files.length; i++) {
+			for (let i = 0; i < EssenceMenu.MAX_MENU_RECENT_ENTRIES && i < files.length; i++) {
 				openRecentMenu.append(this.createOpenRecentMenuItem(files[i], 'openRecentFile'));
 			}
 		}

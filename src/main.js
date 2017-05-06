@@ -186,7 +186,7 @@ try {
 	console.error(err);
 }
 
-// Mac: when someone drops a file to the not-yet running VSCode, the open-file event fires even before
+// Mac: when someone drops a file to the not-yet running Essence, the open-file event fires even before
 // the app-ready event. We listen very early for open-file and remember this upon startup as path to open.
 global.macOpenFiles = [];
 app.on('open-file', function (event, path) {

@@ -54,7 +54,7 @@ if (typeof process === 'object') {
 			let nlsConfig: NLSConfig = JSON.parse(rawNlsConfig);
 			let resolved = nlsConfig.availableLanguages['*'];
 			_locale = nlsConfig.locale;
-			// VSCode's default language is 'en'
+			// Essence's default language is 'en'
 			_language = resolved ? resolved : LANGUAGE_DEFAULT;
 		} catch (e) {
 		}

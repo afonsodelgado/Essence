@@ -34,7 +34,7 @@ function getNixIPCHandle(userDataPath: string, type: string): string {
 }
 
 function getWin32IPCHandle(type: string): string {
-	// Support to run VS Code multiple times as different user
+	// Support to run Essence multiple times as different user
 	// by making the socket unique over the logged in user
 	const userId = getUniqueUserId();
 	const name = product.applicationName + (userId ? `-${userId}` : '');

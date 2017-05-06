@@ -99,7 +99,7 @@
 		{
 			"type": "extensionHost",
 			"request": "launch",
-			"name": "VS Code API Tests",
+			"name": "Essence API Tests",
 			"runtimeExecutable": "${execPath}",
 			"args": [
 				"${workspaceRoot}/extensions/vscode-api-tests/testWorkspace",
@@ -114,7 +114,7 @@
 		{
 			"type": "extensionHost",
 			"request": "launch",
-			"name": "VS Code Tokenizer Tests",
+			"name": "Essence Tokenizer Tests",
 			"runtimeExecutable": "${execPath}",
 			"args": [
 				"${workspaceRoot}/extensions/vscode-colorize-tests/test",
@@ -129,13 +129,13 @@
 		{
 			"type": "chrome",
 			"request": "attach",
-			"name": "Attach to VS Code",
+			"name": "Attach to Essence",
 			"port": 9222
 		},
 		{
 			"type": "chrome",
 			"request": "launch",
-			"name": "Launch VS Code",
+			"name": "Launch Essence",
 			"windows": {
 				"runtimeExecutable": "${workspaceRoot}/scripts/code.bat"
 			},
@@ -167,9 +167,9 @@
 	],
 	"compounds": [
 		{
-			"name": "Debug VS Code Main and Renderer",
+			"name": "Debug Essence Main and Renderer",
 			"configurations": [
-				"Launch VS Code",
+				"Launch Essence",
 				"Attach to Main Process"
 			]
 		}

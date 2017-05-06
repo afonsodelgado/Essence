@@ -172,7 +172,7 @@ export abstract class TextFileService implements ITextFileService {
 
 			// When quit is requested skip the confirm callback and attempt to backup all workspaces.
 			// When quit is not requested the confirm callback should be shown when the window being
-			// closed is the only VS Code window open, except for on Mac where hot exit is only
+			// closed is the only Essence window open, except for on Mac where hot exit is only
 			// ever activated when quit is requested.
 
 			let doBackup: boolean;

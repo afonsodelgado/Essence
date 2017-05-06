@@ -14,7 +14,7 @@ export default () => `
 <div class="welcomePageContainer">
 	<div class="welcomePage">
 		<div class="title">
-			<h1>${escape(localize('welcomePage.vscode', "Visual Studio Code"))}</h1>
+			<h1>${escape(localize('welcomePage.vscode', "Essence"))}</h1>
 			<p class="subtitle">${escape(localize('welcomePage.editingEvolved', "Editing evolved"))}</p>
 		</div>
 		<div class="row">
@@ -55,7 +55,7 @@ export default () => `
 					<li class="selectTheme"><button data-href="command:workbench.action.selectTheme"><h3>${escape(localize('welcomePage.colorTheme', "Color theme"))}</h3> <span>${escape(localize('welcomePage.colorThemeDescription', "Make the editor and your code look the way you love"))}</span></button></li>
 					<li class="keybindingsReference"><button data-href="command:workbench.action.keybindingsReference"><h3>${escape(localize('welcomePage.keybindingsReference', "Keyboard shortcuts reference"))}</h3> <span>${escape(localize('welcomePage.keybindingsReferenceDescription', "A printable PDF with the most common keyboard shortcuts"))}</span></button></li>
 					<li class="showCommands"><button data-href="command:workbench.action.showCommands"><h3>${escape(localize('welcomePage.showCommands', "Find and run all commands"))}</h3> <span>${escape(localize('welcomePage.showCommandsDescription', "Rapidly access and search commands from the control panel ({0})")).replace('{0}', '<span class="shortcut" data-command="workbench.action.showCommands"></span>')}</span></button></li>
-					<li class="openGlobalSettings"><button data-href="command:workbench.action.openGlobalSettings"><h3>${escape(localize('welcomePage.configureSettings', "Configure settings"))}</h3> <span>${escape(localize('welcomePage.configureSettingsDescription', "Unlock the full power of VS Code by tweaking the settings"))}</span></button></li>
+					<li class="openGlobalSettings"><button data-href="command:workbench.action.openGlobalSettings"><h3>${escape(localize('welcomePage.configureSettings', "Configure settings"))}</h3> <span>${escape(localize('welcomePage.configureSettingsDescription', "Unlock the full power of Essence by tweaking the settings"))}</span></button></li>
 					<li class="showRecommendedKeymapExtensions"><button data-href="command:workbench.extensions.action.showRecommendedKeymapExtensions"><h3>${escape(localize('welcomePage.installKeymapDescription', "Install keyboard shortcuts"))}</h3> <span>${escape(localize('welcomePage.installKeymap', "Install the keyboard shortcuts of {0}, {1}, {2} and {3}"))
 		.replace('{0}', `<a class="installKeymap" data-keymap-name="${escape(localize('welcomePage.vim', "Vim"))}" data-keymap="vscodevim.vim" href="javascript:void(0)">${escape(localize('welcomePage.vim', "Vim"))}</a><span class="currentKeymap" data-keymap="vscodevim.vim">${escape(localize('welcomePage.vimCurrent', "Vim (current)"))}</span>`)
 		.replace('{1}', `<a class="installKeymap" data-keymap-name="${escape(localize('welcomePage.sublime', "Sublime"))}" data-keymap="ms-vscode.sublime-keybindings" href="javascript:void(0)">${escape(localize('welcomePage.sublime', "Sublime"))}</a><span class="currentKeymap" data-keymap="ms-vscode.sublime-keybindings">${escape(localize('welcomePage.sublimeCurrent', "Sublime (current)"))}</span>`)

@@ -7,7 +7,7 @@
 
 import { OpenContext } from 'vs/code/common/windows';
 import { IWindowsMainService } from 'vs/code/electron-main/windows';
-import { VSCodeWindow } from 'vs/code/electron-main/window';
+import { EssenceWindow } from 'vs/code/electron-main/window';
 import { TPromise } from 'vs/base/common/winjs.base';
 import { IChannel } from 'vs/base/parts/ipc/common/ipc';
 import { ILogService } from 'vs/code/electron-main/log';
@@ -92,7 +92,7 @@ export class LaunchService implements ILaunchService {
 		}
 
 		// Otherwise handle in windows service
-		let usedWindows: VSCodeWindow[];
+		let usedWindows: EssenceWindow[];
 		if (!!args.extensionDevelopmentPath) {
 			this.windowsService.openExtensionDevelopmentHostWindow({ context, cli: args, userEnv });
 		} else if (args._.length === 0 && (args['new-window'] || args['unity-launch'])) {

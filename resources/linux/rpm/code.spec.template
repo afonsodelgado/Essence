@@ -4,7 +4,7 @@ Release:  @@RELEASE@@.el7
 Summary:  Code editing. Redefined.
 Group:    Development/Tools
 Vendor:   Microsoft Corporation
-Packager: Visual Studio Code Team <vscode-linux@microsoft.com>
+Packager: Essence
 License:  @@LICENSE@@
 URL:      https://code.visualstudio.com/
 Icon:     @@NAME@@.xpm
@@ -12,7 +12,7 @@ Requires: @@DEPENDENCIES@@
 AutoReq:  0
 
 %description
-Visual Studio Code is a new choice of tool that combines the simplicity of a code editor with what developers need for the core edit-build-debug cycle. See https://code.visualstudio.com/docs/setup/linux for installation instructions and FAQ.
+Essence is a new choice of tool that combines the simplicity of a code editor with what developers need for the core edit-build-debug cycle. See https://code.visualstudio.com/docs/setup/linux for installation instructions and FAQ.
 
 %install
 mkdir -p %{buildroot}/usr/share/@@NAME@@

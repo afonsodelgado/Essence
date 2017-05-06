@@ -1,5 +1,5 @@
 ## Interactive Editor Playground
-The core editor in VS Code is packed with features.  This page highlights a number of them and lets you interactively try them out through the use of a number of embedded editors.  For full details on the editor features for VS Code and more head over to our [documentation](command:workbench.action.openDocumentationUrl).
+The core editor in Essence is packed with features.  This page highlights a number of them and lets you interactively try them out through the use of a number of embedded editors.  For full details on the editor features for Essence and more head over to our [documentation](command:workbench.action.openDocumentationUrl).
 
 * [Multi-cursor Editing](#multi-cursor-editing) - block selection, select all occurrences, add additional cursors and more
 * [IntelliSense](#intellisense) - get code assistance and parameter suggestions for your code and external modules.
@@ -31,7 +31,7 @@ That is the tip of the iceberg for multi-cursor editing have a look at the `sele
 
 ### IntelliSense
 
-Visual Studio Code comes with powerful IntelliSense for JavaScript and TypeScript pre-installed. In the below example, position the text cursor in front of the error underline, right after the dot and press kb(editor.action.triggerSuggest) to invoke IntelliSense.  Notice how the suggestion comes from the Request API.
+Essence comes with powerful IntelliSense for JavaScript and TypeScript pre-installed. In the below example, position the text cursor in front of the error underline, right after the dot and press kb(editor.action.triggerSuggest) to invoke IntelliSense.  Notice how the suggestion comes from the Request API.
 
 ```js
 var express = require('express');
@@ -155,7 +155,7 @@ ul>li.item$*5
 
 
 ## Thanks!
-Well if you have got this far then you will have touched on some of the editing features in Visual Studio Code.  But don't stop now :)  We have lots of additional [documentation](https://code.visualstudio.com/docs) and [introductory videos](https://code.visualstudio.com/docs/getstarted/introvideos) for the product that will help you learn how to use it.  And while you are here, here are a few additional things you can try:
+Well if you have got this far then you will have touched on some of the editing features in Essence.  But don't stop now :)  We have lots of additional [documentation](https://code.visualstudio.com/docs) and [introductory videos](https://code.visualstudio.com/docs/getstarted/introvideos) for the product that will help you learn how to use it.  And while you are here, here are a few additional things you can try:
 - Open the Integrated Terminal by pressing kb(workbench.action.terminal.toggleTerminal) then see what's possible by [reviewing the terminal documentation](https://code.visualstudio.com/docs/editor/integrated-terminal)
 - Work with version control by pressing <span class="git-only">kb(workbench.view.git)</span><span class="scm-only">kb(workbench.view.scm)</span> understand how to stage, commit, change branches, and view diffs and more by reviewing the [version control documentation](https://code.visualstudio.com/docs/editor/versioncontrol)
 - Browse thousands of extensions in our integrated gallery by pressing with kb(workbench.view.extensions) the [documentation](https://code.visualstudio.com/docs/editor/extension-gallery) will show you how to see the most popular extensions, disable installed ones and more.

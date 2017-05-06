@@ -99,7 +99,7 @@ declare module 'vscode' {
 	 */
 	export enum FileLocationKind {
 		/**
-		 * VS Code should decide based on whether the file path found in the
+		 * Essence should decide based on whether the file path found in the
 		 * output is absolute or relative. A relative file path will be treated
 		 * relative to the workspace root.
 		 */
@@ -255,7 +255,7 @@ declare module 'vscode' {
 	export interface ProcessOptions {
 		/**
 		 * The current working directory of the executed program or shell.
-		 * If omitted VSCode's current workspace root is used.
+		 * If omitted Essence's current workspace root is used.
 		 */
 		cwd?: string;
 
@@ -389,7 +389,7 @@ declare module 'vscode' {
 
 		/**
 		 * The current working directory of the executed shell.
-		 * If omitted VSCode's current workspace root is used.
+		 * If omitted Essence's current workspace root is used.
 		 */
 		cwd?: string;
 
@@ -402,7 +402,7 @@ declare module 'vscode' {
 	} | {
 			/**
 			 * The current working directory of the executed shell.
-			 * If omitted VSCode's current workspace root is used.
+			 * If omitted Essence's current workspace root is used.
 			 */
 			cwd: string;
 
@@ -415,7 +415,7 @@ declare module 'vscode' {
 		} | {
 			/**
 			 * The current working directory of the executed shell.
-			 * If omitted VSCode's current workspace root is used.
+			 * If omitted Essence's current workspace root is used.
 			 */
 			cwd?: string;
 

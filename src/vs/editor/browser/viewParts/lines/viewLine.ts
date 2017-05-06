@@ -18,7 +18,7 @@ import { ViewportData } from 'vs/editor/common/viewLayout/viewLinesViewportData'
 
 const canUseFastRenderedViewLine = (function () {
 	if (platform.isNative) {
-		// In VSCode we know very well when the zoom level changes
+		// In Essence we know very well when the zoom level changes
 		return true;
 	}
 

@@ -67,7 +67,7 @@ export class GitlessView
 			'<div class="gitless-view">',
 			'<p>', nls.localize('looksLike', "It looks like git is not installed on your system."), '</p>',
 			'<p>', instructions, '</p>',
-			'<p>', nls.localize('pleaseRestart', "Once git is installed, please restart VSCode."), '</p>',
+			'<p>', nls.localize('pleaseRestart', "Once git is installed, please restart Essence."), '</p>',
 			'</div>'
 		].join('')).getHTMLElement();
 	}

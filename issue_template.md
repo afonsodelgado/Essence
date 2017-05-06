@@ -1,6 +1,6 @@
 <!-- Do you have a question? Please ask it on http://stackoverflow.com/questions/tagged/vscode -->
 
-- VSCode Version:
+- Essence Version:
 - OS Version:
 
 Steps to Reproduce:

@@ -122,7 +122,7 @@ suite('WindowsUtils', () => {
 		})), nestedFolderWindow);
 	});
 
-	test('VSCode folder wins over existing window if more specific', () => {
+	test('Essence folder wins over existing window if more specific', () => {
 		const window = { lastFocusTime: 1, openedWorkspacePath: path.join(fixturesFolder, 'vscode_folder') };
 		assert.equal(findBestWindowOrFolder(options({
 			windows: [window],
@@ -135,13 +135,13 @@ suite('WindowsUtils', () => {
 		})), window);
 	});
 
-	test('More specific VSCode folder wins', () => {
+	test('More specific Essence folder wins', () => {
 		assert.equal(findBestWindowOrFolder(options({
 			filePath: path.join(fixturesFolder, 'vscode_folder', 'nested_vscode_folder', 'subfolder', 'file.txt')
 		})), path.join(fixturesFolder, 'vscode_folder', 'nested_vscode_folder'));
 	});
 
-	test('VSCode folder in home folder needs settings.json', () => {
+	test('Essence folder in home folder needs settings.json', () => {
 		// Because ~/.vscode/extensions is used for extensions, ~/.vscode is not enough as a hint.
 		assert.equal(findBestWindowOrFolder(options({
 			filePath: path.join(fixturesFolder, 'vscode_folder', 'file.txt'),

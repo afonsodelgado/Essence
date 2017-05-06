@@ -9,8 +9,8 @@ import pkg from 'vs/platform/node/package';
 
 export function getCommonHTTPHeaders(): TPromise<{ [key: string]: string; }> {
 	return getMachineId().then(machineId => ({
-		'X-Market-Client-Id': `VSCode ${pkg.version}`,
-		'User-Agent': `VSCode ${pkg.version}`,
+		'X-Market-Client-Id': `Essence ${pkg.version}`,
+		'User-Agent': `Essence ${pkg.version}`,
 		'X-Market-User-Id': machineId
 	}));
 }

@@ -45,7 +45,7 @@ suite('TextSearch performance (integration)', () => {
 
 	test('Measure', () => {
 		if (process.env['VSCODE_PID']) {
-			return undefined; // TODO@Rob find out why test fails when run from within VS Code
+			return undefined; // TODO@Rob find out why test fails when run from within Essence
 		}
 
 		const n = 3;

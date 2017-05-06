@@ -58,7 +58,7 @@ suite('QuickOpen performance (integration)', () => {
 
 	test('Measure', () => {
 		if (process.env['VSCODE_PID']) {
-			return; // TODO@Christoph find out why test fails when run from within VS Code
+			return; // TODO@Christoph find out why test fails when run from within Essence
 		}
 
 		const n = 3;

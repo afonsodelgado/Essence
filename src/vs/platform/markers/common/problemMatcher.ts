@@ -585,8 +585,8 @@ export namespace Config {
 		base?: string;
 
 		/**
-		* The owner of the produced VSCode problem. This is typically
-		* the identifier of a VSCode language service if the problems are
+		* The owner of the produced Essence problem. This is typically
+		* the identifier of a Essence language service if the problems are
 		* to be merged with the one produced by the language service
 		* or a generated internal id. Defaults to the generated internal id.
 		*/
@@ -605,7 +605,7 @@ export namespace Config {
 		applyTo?: string;
 
 		/**
-		* The severity of the VSCode problem produced by this problem matcher.
+		* The severity of the Essence problem produced by this problem matcher.
 		*
 		* Valid values are:
 		*   "error": to produce errors.

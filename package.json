@@ -1,5 +1,5 @@
 {
-  "name": "code-oss-dev",
+  "name": "code-essence",
   "version": "1.12.1",
   "electronVersion": "1.6.6",
   "distro": "bb676c1d1f91a0c6d3050d8ca8a49ba7743108c5",
@@ -110,10 +110,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/vscode.git"
+    "url": "https://github.com/flagello/essence.git"
   },
   "bugs": {
-    "url": "https://github.com/Microsoft/vscode/issues"
+    "url": "https://github.com/flagello/esesnce/issues"
   },
   "optionalDependencies": {
     "windows-foreground-love": "0.1.0",

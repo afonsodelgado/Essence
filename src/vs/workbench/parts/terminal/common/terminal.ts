@@ -99,7 +99,7 @@ export interface IShellLaunchConfig {
 	cwd?: string;
 	/**
 	 * A custom environment for the terminal, if this is not set the environment will be inherited
-	 * from the VS Code process.
+	 * from the Essence process.
 	 */
 	env?: { [key: string]: string };
 	/**

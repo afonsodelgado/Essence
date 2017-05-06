@@ -16,7 +16,7 @@ import { IBackupMainService } from 'vs/platform/backup/common/backup';
 import { trim } from 'vs/base/common/strings';
 import { IEnvironmentService, ParsedArgs } from 'vs/platform/environment/common/environment';
 import { IStorageService } from 'vs/code/electron-main/storage';
-import { IPath, VSCodeWindow, IWindowConfiguration, IWindowState as ISingleWindowState, defaultWindowState, WindowMode } from 'vs/code/electron-main/window';
+import { IPath, EssenceWindow, IWindowConfiguration, IWindowState as ISingleWindowState, defaultWindowState, WindowMode } from 'vs/code/electron-main/window';
 import { ipcMain as ipc, app, screen, BrowserWindow, dialog } from 'electron';
 import { IPathWithLineAndColumn, parseLineAndColumnAware } from 'vs/code/electron-main/paths';
 import { ILifecycleService, UnloadReason } from 'vs/code/electron-main/lifecycle';
@@ -48,7 +48,7 @@ export interface IOpenConfiguration {
 	forceNewWindow?: boolean;
 	forceReuseWindow?: boolean;
 	forceEmpty?: boolean;
-	windowToUse?: VSCodeWindow;
+	windowToUse?: EssenceWindow;
 	diffMode?: boolean;
 	initialStartup?: boolean;
 }
@@ -78,7 +78,7 @@ interface INativeOpenDialogOptions {
 	pickFiles?: boolean;
 	path?: string;
 	forceNewWindow?: boolean;
-	window?: VSCodeWindow;
+	window?: EssenceWindow;
 }
 
 const ReopenFoldersSetting = {
@@ -93,7 +93,7 @@ export interface IWindowsMainService {
 	_serviceBrand: any;
 
 	// events
-	onWindowReady: CommonEvent<VSCodeWindow>;
+	onWindowReady: CommonEvent<EssenceWindow>;
 	onWindowClose: CommonEvent<number>;
 	onWindowReload: CommonEvent<number>;
 	onPathsOpen: CommonEvent<IPath[]>;
@@ -101,22 +101,22 @@ export interface IWindowsMainService {
 
 	// methods
 	ready(initialUserEnv: platform.IProcessEnvironment): void;
-	reload(win: VSCodeWindow, cli?: ParsedArgs): void;
-	open(openConfig: IOpenConfiguration): VSCodeWindow[];
+	reload(win: EssenceWindow, cli?: ParsedArgs): void;
+	open(openConfig: IOpenConfiguration): EssenceWindow[];
 	openExtensionDevelopmentHostWindow(openConfig: IOpenConfiguration): void;
 	openFileFolderPicker(forceNewWindow?: boolean, data?: ITelemetryData): void;
-	openFilePicker(forceNewWindow?: boolean, path?: string, window?: VSCodeWindow, data?: ITelemetryData): void;
-	openFolderPicker(forceNewWindow?: boolean, window?: VSCodeWindow, data?: ITelemetryData): void;
+	openFilePicker(forceNewWindow?: boolean, path?: string, window?: EssenceWindow, data?: ITelemetryData): void;
+	openFolderPicker(forceNewWindow?: boolean, window?: EssenceWindow, data?: ITelemetryData): void;
 	openAccessibilityOptions(): void;
-	focusLastActive(cli: ParsedArgs, context: OpenContext): VSCodeWindow;
-	getLastActiveWindow(): VSCodeWindow;
-	findWindow(workspacePath: string, filePath?: string, extensionDevelopmentPath?: string): VSCodeWindow;
+	focusLastActive(cli: ParsedArgs, context: OpenContext): EssenceWindow;
+	getLastActiveWindow(): EssenceWindow;
+	findWindow(workspacePath: string, filePath?: string, extensionDevelopmentPath?: string): EssenceWindow;
 	openNewWindow(context: OpenContext): void;
 	sendToFocused(channel: string, ...args: any[]): void;
 	sendToAll(channel: string, payload: any, windowIdsToIgnore?: number[]): void;
-	getFocusedWindow(): VSCodeWindow;
-	getWindowById(windowId: number): VSCodeWindow;
-	getWindows(): VSCodeWindow[];
+	getFocusedWindow(): EssenceWindow;
+	getWindowById(windowId: number): EssenceWindow;
+	getWindows(): EssenceWindow[];
 	getWindowCount(): number;
 	addToRecentPathsList(paths: { path: string; isFile?: boolean; }[]): void;
 	getRecentPathsList(workspacePath?: string, filesToOpen?: IPath[]): IRecentPathsList;
@@ -137,7 +137,7 @@ export class WindowsManager implements IWindowsMainService {
 	private static workingDirPickerStorageKey = 'pickerWorkingDir';
 	private static windowsStateStorageKey = 'windowsState';
 
-	private static WINDOWS: VSCodeWindow[] = [];
+	private static WINDOWS: EssenceWindow[] = [];
 
 	private initialUserEnv: platform.IProcessEnvironment;
 
@@ -147,8 +147,8 @@ export class WindowsManager implements IWindowsMainService {
 	private _onRecentPathsChange = new Emitter<void>();
 	onRecentPathsChange: CommonEvent<void> = this._onRecentPathsChange.event;
 
-	private _onWindowReady = new Emitter<VSCodeWindow>();
-	onWindowReady: CommonEvent<VSCodeWindow> = this._onWindowReady.event;
+	private _onWindowReady = new Emitter<EssenceWindow>();
+	onWindowReady: CommonEvent<EssenceWindow> = this._onWindowReady.event;
 
 	private _onWindowClose = new Emitter<number>();
 	onWindowClose: CommonEvent<number> = this._onWindowClose.event;
@@ -311,7 +311,7 @@ export class WindowsManager implements IWindowsMainService {
 	}
 
 	// See note on #onBeforeQuit() for details how these events are flowing
-	private onBeforeWindowClose(win: VSCodeWindow): void {
+	private onBeforeWindowClose(win: EssenceWindow): void {
 		if (this.lifecycleService.isQuitRequested()) {
 			return; // during quit, many windows close in parallel so let it be handled in the before-quit handler
 		}
@@ -343,11 +343,11 @@ export class WindowsManager implements IWindowsMainService {
 		if (event === 'vscode:changeColorTheme' && typeof payload === 'string') {
 
 			let data = JSON.parse(payload);
-			this.storageService.setItem(VSCodeWindow.themeStorageKey, data.id);
-			this.storageService.setItem(VSCodeWindow.themeBackgroundStorageKey, data.background);
+			this.storageService.setItem(EssenceWindow.themeStorageKey, data.id);
+			this.storageService.setItem(EssenceWindow.themeBackgroundStorageKey, data.background);
 		}
 	}
-	public reload(win: VSCodeWindow, cli?: ParsedArgs): void {
+	public reload(win: EssenceWindow, cli?: ParsedArgs): void {
 
 		// Only reload when the window has not vetoed this
 		this.lifecycleService.unload(win, UnloadReason.RELOAD).done(veto => {
@@ -360,11 +360,11 @@ export class WindowsManager implements IWindowsMainService {
 		});
 	}
 
-	public open(openConfig: IOpenConfiguration): VSCodeWindow[] {
+	public open(openConfig: IOpenConfiguration): EssenceWindow[] {
 		const windowConfig = this.configurationService.getConfiguration<IWindowSettings>('window');
 
 		let iPathsToOpen: IPath[];
-		const usedWindows: VSCodeWindow[] = [];
+		const usedWindows: EssenceWindow[] = [];
 
 		// Find paths from provided paths if any
 		if (openConfig.pathsToOpen && openConfig.pathsToOpen.length > 0) {
@@ -469,7 +469,7 @@ export class WindowsManager implements IWindowsMainService {
 				filePath: fileToCheck && fileToCheck.filePath,
 				userHome: this.environmentService.userHome
 			});
-			if (windowOrFolder instanceof VSCodeWindow) {
+			if (windowOrFolder instanceof EssenceWindow) {
 				windowOrFolder.focus();
 				const files = { filesToOpen, filesToCreate, filesToDiff }; // copy to object because they get reset shortly after
 				windowOrFolder.ready().then(readyWindow => {
@@ -820,8 +820,8 @@ export class WindowsManager implements IWindowsMainService {
 		return [Object.create(null)];
 	}
 
-	private openInBrowserWindow(configuration: IWindowConfiguration, forceNewWindow?: boolean, windowToUse?: VSCodeWindow, emptyWorkspaceBackupFolder?: string): VSCodeWindow {
-		let vscodeWindow: VSCodeWindow;
+	private openInBrowserWindow(configuration: IWindowConfiguration, forceNewWindow?: boolean, windowToUse?: EssenceWindow, emptyWorkspaceBackupFolder?: string): EssenceWindow {
+		let vscodeWindow: EssenceWindow;
 
 		if (!forceNewWindow) {
 			vscodeWindow = windowToUse || this.getLastActiveWindow();
@@ -851,7 +851,7 @@ export class WindowsManager implements IWindowsMainService {
 				state.mode = WindowMode.Normal;
 			}
 
-			vscodeWindow = new VSCodeWindow({
+			vscodeWindow = new EssenceWindow({
 				state,
 				extensionDevelopmentPath: configuration.extensionDevelopmentPath,
 				isExtensionTestHost: !!configuration.extensionTestsPath
@@ -1014,11 +1014,11 @@ export class WindowsManager implements IWindowsMainService {
 		this.doPickAndOpen({ pickFolders: true, pickFiles: true, forceNewWindow }, 'openFileFolder', data);
 	}
 
-	public openFilePicker(forceNewWindow?: boolean, path?: string, window?: VSCodeWindow, data?: ITelemetryData): void {
+	public openFilePicker(forceNewWindow?: boolean, path?: string, window?: EssenceWindow, data?: ITelemetryData): void {
 		this.doPickAndOpen({ pickFiles: true, forceNewWindow, path, window }, 'openFile', data);
 	}
 
-	public openFolderPicker(forceNewWindow?: boolean, window?: VSCodeWindow, data?: ITelemetryData): void {
+	public openFolderPicker(forceNewWindow?: boolean, window?: EssenceWindow, data?: ITelemetryData): void {
 		this.doPickAndOpen({ pickFolders: true, forceNewWindow, window }, 'openFolder', data);
 	}
 
@@ -1080,7 +1080,7 @@ export class WindowsManager implements IWindowsMainService {
 		});
 	}
 
-	public focusLastActive(cli: ParsedArgs, context: OpenContext): VSCodeWindow {
+	public focusLastActive(cli: ParsedArgs, context: OpenContext): EssenceWindow {
 		const lastActive = this.getLastActiveWindow();
 		if (lastActive) {
 			lastActive.focus();
@@ -1094,11 +1094,11 @@ export class WindowsManager implements IWindowsMainService {
 		return res && res[0];
 	}
 
-	public getLastActiveWindow(): VSCodeWindow {
+	public getLastActiveWindow(): EssenceWindow {
 		return getLastActiveWindow(WindowsManager.WINDOWS);
 	}
 
-	public findWindow(workspacePath: string, filePath?: string, extensionDevelopmentPath?: string): VSCodeWindow {
+	public findWindow(workspacePath: string, filePath?: string, extensionDevelopmentPath?: string): EssenceWindow {
 		if (WindowsManager.WINDOWS.length) {
 
 			// Sort the last active window to the front of the array of windows to test
@@ -1165,7 +1165,7 @@ export class WindowsManager implements IWindowsMainService {
 		});
 	}
 
-	public getFocusedWindow(): VSCodeWindow {
+	public getFocusedWindow(): EssenceWindow {
 		const win = BrowserWindow.getFocusedWindow();
 		if (win) {
 			return this.getWindowById(win.id);
@@ -1174,7 +1174,7 @@ export class WindowsManager implements IWindowsMainService {
 		return null;
 	}
 
-	public getWindowById(windowId: number): VSCodeWindow {
+	public getWindowById(windowId: number): EssenceWindow {
 		const res = WindowsManager.WINDOWS.filter(w => w.id === windowId);
 		if (res && res.length === 1) {
 			return res[0];
@@ -1183,7 +1183,7 @@ export class WindowsManager implements IWindowsMainService {
 		return null;
 	}
 
-	public getWindows(): VSCodeWindow[] {
+	public getWindows(): EssenceWindow[] {
 		return WindowsManager.WINDOWS;
 	}
 
@@ -1191,8 +1191,8 @@ export class WindowsManager implements IWindowsMainService {
 		return WindowsManager.WINDOWS.length;
 	}
 
-	private onWindowError(vscodeWindow: VSCodeWindow, error: WindowError): void {
-		console.error(error === WindowError.CRASHED ? '[VS Code]: render process crashed!' : '[VS Code]: detected unresponsive');
+	private onWindowError(vscodeWindow: EssenceWindow, error: WindowError): void {
+		console.error(error === WindowError.CRASHED ? '[Essence]: render process crashed!' : '[Essence]: detected unresponsive');
 
 		// Unresponsive
 		if (error === WindowError.UNRESPONSIVE) {
@@ -1233,7 +1233,7 @@ export class WindowsManager implements IWindowsMainService {
 		}
 	}
 
-	private onWindowClosed(win: VSCodeWindow): void {
+	private onWindowClosed(win: EssenceWindow): void {
 
 		// Tell window
 		win.dispose();

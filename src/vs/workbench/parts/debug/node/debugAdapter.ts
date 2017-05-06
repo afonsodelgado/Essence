@@ -197,7 +197,7 @@ export class Adapter {
 			};
 			properties['debugServer'] = {
 				type: 'number',
-				description: nls.localize('debugServer', "For debug extension development only: if a port is specified VS Code tries to connect to a debug adapter running in server mode"),
+				description: nls.localize('debugServer', "For debug extension development only: if a port is specified Essence tries to connect to a debug adapter running in server mode"),
 				default: 4711
 			};
 			properties['preLaunchTask'] = {

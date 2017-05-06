@@ -171,7 +171,7 @@ export class TitlebarPart extends Part implements ITitleService {
 	 * {activeEditorShort}: e.g. myFile.txt
 	 * {rootName}: e.g. myProject
 	 * {rootPath}: e.g. /Users/Development/myProject
-	 * {appName}: e.g. VS Code
+	 * {appName}: e.g. Essence
 	 * {dirty}: indiactor
 	 * {separator}: conditional separator
 	 */

@@ -55,10 +55,10 @@ export const defaultWindowState = function (mode = WindowMode.Normal): IWindowSt
 
 export interface IPath {
 
-	// the workspace spath for a VSCode instance which can be null
+	// the workspace spath for a Essence instance which can be null
 	workspacePath?: string;
 
-	// the file path to open within a VSCode instance
+	// the file path to open within a Essence instance
 	filePath?: string;
 
 	// the line number in the file path to open
@@ -67,7 +67,7 @@ export interface IPath {
 	// the column number in the file path to open
 	columnNumber?: number;
 
-	// indicator to create the file path in the VSCode instance
+	// indicator to create the file path in the Essence instance
 	createFilePath?: boolean;
 }
 
@@ -132,7 +132,7 @@ interface IConfiguration {
 	};
 }
 
-export class VSCodeWindow {
+export class EssenceWindow {
 
 	public static themeStorageKey = 'theme';
 	public static themeBackgroundStorageKey = 'themeBackground';
@@ -154,7 +154,7 @@ export class VSCodeWindow {
 	private currentWindowMode: WindowMode;
 	private toDispose: IDisposable[];
 
-	private whenReadyCallbacks: TValueCallback<VSCodeWindow>[];
+	private whenReadyCallbacks: TValueCallback<EssenceWindow>[];
 
 	private currentConfig: IWindowConfiguration;
 	private pendingLoadConfig: IWindowConfiguration;
@@ -186,8 +186,8 @@ export class VSCodeWindow {
 			x: this.windowState.x,
 			y: this.windowState.y,
 			backgroundColor: this.getBackgroundColor(),
-			minWidth: VSCodeWindow.MIN_WIDTH,
-			minHeight: VSCodeWindow.MIN_HEIGHT,
+			minWidth: EssenceWindow.MIN_WIDTH,
+			minHeight: EssenceWindow.MIN_HEIGHT,
 			show: !isFullscreenOrMaximized,
 			title: product.nameLong,
 			webPreferences: {
@@ -342,8 +342,8 @@ export class VSCodeWindow {
 		}
 	}
 
-	public ready(): TPromise<VSCodeWindow> {
-		return new TPromise<VSCodeWindow>((c) => {
+	public ready(): TPromise<EssenceWindow> {
+		return new TPromise<EssenceWindow>((c) => {
 			if (this._readyState === ReadyState.READY) {
 				return c(this);
 			}
@@ -384,7 +384,7 @@ export class VSCodeWindow {
 				this.pendingLoadConfig = null;
 			}
 
-			// To prevent flashing, we set the window visible after the page has finished to load but before VSCode is loaded
+			// To prevent flashing, we set the window visible after the page has finished to load but before Essence is loaded
 			if (!this.win.isVisible()) {
 				if (this.currentWindowMode === WindowMode.Maximized) {
 					this.win.maximize();
@@ -580,7 +580,7 @@ export class VSCodeWindow {
 		if (platform.isWindows && systemPreferences.isInvertedColorScheme()) {
 			return 'hc-black';
 		}
-		const theme = this.storageService.getItem<string>(VSCodeWindow.themeStorageKey, 'vs-dark');
+		const theme = this.storageService.getItem<string>(EssenceWindow.themeStorageKey, 'vs-dark');
 		return theme.split(' ')[0];
 	}
 
@@ -589,7 +589,7 @@ export class VSCodeWindow {
 			return '#000000';
 		}
 
-		let background = this.storageService.getItem<string>(VSCodeWindow.themeBackgroundStorageKey, null);
+		let background = this.storageService.getItem<string>(EssenceWindow.themeBackgroundStorageKey, null);
 		if (!background) {
 			let baseTheme = this.getBaseTheme();
 			return baseTheme === 'hc-black' ? '#000000' : (baseTheme === 'vs' ? '#FFFFFF' : (platform.isMacintosh ? '#171717' : '#1E1E1E')); // https://github.com/electron/electron/issues/5150

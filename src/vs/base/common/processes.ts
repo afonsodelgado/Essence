@@ -19,7 +19,7 @@ import { ValidationState, IProblemReporter, Parser } from 'vs/base/common/parser
 export interface CommandOptions {
 	/**
 	 * The current working directory of the executed program or shell.
-	 * If omitted VSCode's current workspace root is used.
+	 * If omitted Essence's current workspace root is used.
 	 */
 	cwd?: string;
 
@@ -102,7 +102,7 @@ export namespace Config {
 	export interface CommandOptions {
 		/**
 		 * The current working directory of the executed program or shell.
-		 * If omitted VSCode's current workspace root is used.
+		 * If omitted Essence's current workspace root is used.
 		 */
 		cwd?: string;
 

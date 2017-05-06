@@ -18,7 +18,7 @@ import { ITerminalConfiguration, DEFAULT_TERMINAL_WINDOWS, DEFAULT_TERMINAL_LINU
 import uri from 'vs/base/common/uri';
 import { IProcessEnvironment } from 'vs/base/common/platform';
 
-const TERMINAL_TITLE = nls.localize('console.title', "VS Code Console");
+const TERMINAL_TITLE = nls.localize('console.title', "Essence Console");
 
 enum WinSpawnType {
 	CMD,

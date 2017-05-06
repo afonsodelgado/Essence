@@ -13,7 +13,7 @@ import { OpenContext } from 'vs/code/common/windows';
 import { isEqualOrParent } from 'vs/platform/files/common/files';
 
 /**
- * Exported subset of VSCodeWindow for testing.
+ * Exported subset of EssenceWindow for testing.
  */
 export interface ISimpleWindow {
 	openedWorkspacePath: string;
