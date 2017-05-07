@@ -130,7 +130,7 @@ export class MessageList {
 			this.messageListContainer.style('background-color', this.background ? this.background.toString() : null);
 			this.messageListContainer.style('color', this.foreground ? this.foreground.toString() : null);
 			this.messageListContainer.style('outline-color', this.outlineBorder ? this.outlineBorder.toString() : null);
-			this.messageListContainer.style('box-shadow', this.widgetShadow ? `0 5px 8px ${this.widgetShadow}` : null);
+			this.messageListContainer.style('box-shadow', this.widgetShadow ? `0 0 72px ${this.widgetShadow}` : null);
 		}
 	}
 

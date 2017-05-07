@@ -13,6 +13,10 @@
 	padding: 0;
 	width: 70%;
 	left: 15%;
+
+	/* Essence */
+	top: 22px;
+	border-radius: 4.5px;
 }
 
 .hc-black .global-message-list {
@@ -49,6 +53,9 @@
 
 .global-message-list li.message-list-entry-with-action {
 	padding-right: 0;
+
+	/* Essence */
+	border-radius: 4.5px;
 }
 
 .global-message-list li.message-list-entry .message-left-side {
@@ -58,6 +65,9 @@
 	-moz-user-select: text;
 	-o-user-select: text;
 	user-select: text;
+
+	/* Essence */
+	font-weight: 500;
 }
 
 .global-message-list li.message-list-entry .message-left-side.severity {
@@ -71,6 +81,10 @@
 	-moz-user-select: -moz-none;
 	-o-user-select: none;
 	user-select: none;
+
+	/* Essence */
+	border-radius: 2.25px;
+	text-transform: uppercase;
 }
 
 .global-message-list li.message-list-entry .message-left-side.message-overflow-ellipsis {
@@ -86,6 +100,9 @@
 
 .global-message-list li.message-list-entry .actions-container .message-action {
 	display: inline-block;
+
+	/* Essence */
+	font-weight: 700;
 }
 
 .global-message-list li.message-list-entry .actions-container .message-action .action-button {
