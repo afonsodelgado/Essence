@@ -36,3 +36,15 @@
 .monaco-editor .margin-view-overlays .line-numbers.lh-odd {
 	margin-top: 1px;
 }
+
+
+/* Essence */
+.monaco-workbench.no-panel.no-sidebar .margin-view-overlays .line-numbers {
+	opacity: 0;
+	transition: opacity 0.18s ease-in-out;
+	will-change: opacity;
+}
+
+.monaco-workbench.no-panel.no-sidebar .margin-view-overlays .line-numbers:hover {
+	opacity: 1;
+}
