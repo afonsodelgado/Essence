@@ -24,10 +24,10 @@
 }
 
 .monaco-editor .parameter-hints-widget.visible {
-	-webkit-transition: left .05s ease-in-out;
-	-moz-transition: left .05s ease-in-out;
-	-o-transition: left .05s ease-in-out;
-	transition: left .05s ease-in-out;
+	-webkit-transition: left .05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-moz-transition: left .05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-o-transition: left .05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	transition: left .05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .monaco-editor .parameter-hints-widget p,

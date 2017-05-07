@@ -68,9 +68,9 @@
 	transition-duration: 0.15s;
 	-webkit-transition-duration: 0.15s;
 	-moz-transition-duration: 0.15s;
-	transition-timing-function: ease-out;
-	-webkit-transition-timing-function: ease-out;
-	-moz-transition-timing-function: ease-out;
+	transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-webkit-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-moz-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .monaco-split-view.vertical.animated > .split-view-view {

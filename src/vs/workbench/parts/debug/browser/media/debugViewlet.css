@@ -75,8 +75,8 @@
 	width: 20px;
 	background: url('continue.svg') center center no-repeat;
 	flex-shrink: 0;
-	transition: transform 50ms ease;
-	-webkit-transition: -webkit-transform 50ms ease;
+	transition: transform 50ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-webkit-transition: -webkit-transform 50ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .vs-dark .monaco-workbench > .part > .title > .title-actions .start-debug-action-item .icon,

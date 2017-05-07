@@ -212,7 +212,7 @@
 	margin-right: 0;
 	position: relative;
 	top: 2px;
-	transition:			width 150ms, margin-right 150ms ease-in;
+	transition:			width 150ms, margin-right 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .search-viewlet .linematch .checkbox.checked {

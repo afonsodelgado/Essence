@@ -26,12 +26,12 @@
 }
 
 .global-message-list.transition {
-	-webkit-transition:	top 200ms ease-in-out;
-	-ms-transition:		top 200ms ease-in-out;
-	-moz-transition:	top 200ms ease-in-out;
-	-khtml-transition:	top 200ms ease-in-out;
-	-o-transition:		top 200ms ease-in-out;
-	transition:			top 200ms ease-in-out;
+	-webkit-transition:	top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-ms-transition:		top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-moz-transition:	top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-khtml-transition:	top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-o-transition:		top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	transition:			top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .global-message-list ul.message-list {

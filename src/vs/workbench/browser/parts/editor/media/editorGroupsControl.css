@@ -63,7 +63,7 @@
 }
 
 .monaco-workbench > .editor > .content.vertical-layout > .one-editor-silo.draggedunder {
-	transition: left 200ms ease-out;
+	transition: left 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .monaco-workbench > .editor > .content.vertical-layout > .editor-three.draggedunder {
@@ -71,7 +71,7 @@
 }
 
 .monaco-workbench > .editor > .content.horizontal-layout > .one-editor-silo.draggedunder {
-	transition: top 200ms ease-out;
+	transition: top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .monaco-workbench > .editor > .content.horizontal-layout > .editor-three.draggedunder {

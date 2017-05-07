@@ -41,7 +41,7 @@
 /* Essence */ /* .monaco-workbench.nopanel.nosidebar === zenMode */
 .monaco-workbench.nopanel.nosidebar .margin-view-overlays .line-numbers {
 	opacity: 0;
-	transition: opacity 0.18s ease-in-out;
+	transition: opacity 0.18s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 	will-change: opacity;
 }
 

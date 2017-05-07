@@ -8,7 +8,7 @@
 	background-color: rgba(121, 121, 121, 0);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	transition: background-color 800ms ease-in-out;
+	transition: background-color 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .monaco-workbench .panel.integrated-terminal .xterm-viewport::-webkit-scrollbar {
@@ -26,12 +26,12 @@
 .monaco-workbench .panel.integrated-terminal .xterm.focus .xterm-viewport,
 .monaco-workbench .panel.integrated-terminal .xterm:focus .xterm-viewport,
 .monaco-workbench .panel.integrated-terminal .xterm:hover .xterm-viewport {
-	transition: opacity 100ms ease-in-out;
+	transition: opacity 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 	background-color: rgba(121, 121, 121, 0.4);
 }
 
 .monaco-workbench .panel.integrated-terminal .xterm .xterm-viewport::-webkit-scrollbar-thumb:hover {
-	transition: opacity 0ms ease-in-out;
+	transition: opacity 0ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 	background-color: rgba(100, 100, 100, .7);
 }
 

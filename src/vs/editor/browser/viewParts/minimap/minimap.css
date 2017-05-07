@@ -5,7 +5,7 @@
 
 .monaco-editor .minimap-slider {
 	opacity: 0;
-	transition: opacity 100ms ease-in-out;
+	transition: opacity 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .monaco-editor .minimap:hover .minimap-slider {
 	opacity: 1;
