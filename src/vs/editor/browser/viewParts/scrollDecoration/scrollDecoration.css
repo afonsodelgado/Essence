@@ -11,6 +11,7 @@
 	/* Essence */
 	height: 18px;
 	box-shadow: #DDD 0 2px 12px -6px inset;
+	transition: opacity 0.36s ease-in-out;
 }
 
 .monaco-editor.vs-dark .scroll-decoration {
@@ -20,4 +21,9 @@
 
 .monaco-editor.hc-black .scroll-decoration {
 	box-shadow: none;
+}
+
+/* Essence */
+.monaco-editor .scroll-decoration.hidden {
+	opacity: 0;
 }

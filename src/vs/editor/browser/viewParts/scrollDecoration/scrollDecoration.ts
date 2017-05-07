@@ -29,6 +29,9 @@ export class ScrollDecorationViewPart extends ViewPart {
 		this._shouldShow = false;
 		this._useShadows = this._context.configuration.editor.viewInfo.scrollbar.useShadows;
 		this._domNode = createFastDomNode(document.createElement('div'));
+
+		/* Essence */
+		this._domNode.setClassName('scroll-decoration');
 	}
 
 	public dispose(): void {
@@ -83,6 +86,9 @@ export class ScrollDecorationViewPart extends ViewPart {
 
 	public render(ctx: RestrictedRenderingContext): void {
 		this._domNode.setWidth(this._width);
-		this._domNode.setClassName(this._shouldShow ? 'scroll-decoration' : '');
+
+		/* Essence */
+		const visibilityClassName = 'hidden';
+		this._shouldShow ? this._domNode.removeClassName(visibilityClassName) : this._domNode.addClassName(visibilityClassName);
 	}
 }
