@@ -114,3 +114,9 @@
 .monaco-editor.vs		.greensquiggly,
 .monaco-editor.vs-dark	.greensquiggly { background: url("green-squiggly.svg") repeat-x bottom left; }
 .monaco-editor.hc-black .greensquiggly { border-bottom: 4px double #71B771; opacity: 0.8; }
+
+
+/* Essence */ /* .monaco-workbench.nopanel.nosidebar === zenMode */
+.monaco-workbench.nopanel.nosidebar .monaco-editor {
+	top: 69px !important;
+}

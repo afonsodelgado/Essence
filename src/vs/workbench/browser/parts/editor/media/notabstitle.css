@@ -45,3 +45,9 @@
 .hc-black .monaco-workbench > .part.editor > .content > .one-editor-silo > .container > .title.dirty .title-actions .close-editor-action:hover {
 	background: url('close-inverse.svg') center center no-repeat;
 }
+
+
+/* Essence */ /* .monaco-workbench.nopanel.nosidebar === zenMode */
+.monaco-workbench.nopanel.nosidebar > .part.editor > .content > .one-editor-silo > .container > .title {
+	display: none !important;
+}

@@ -145,3 +145,17 @@
 .hc-black .monaco-scrollable-element .shadow.top.left {
 	box-shadow: none;
 }
+
+
+/* Essence */
+.monaco-workbench.nopanel.nosidebar .monaco-scrollable-element > .shadow {
+	display: none;
+}
+
+.monaco-workbench.nopanel.nosidebar .monaco-scrollable-element > .scrollbar > .slider {
+	opacity: 0;
+}
+
+.monaco-workbench.nopanel.nosidebar .decorationsOverviewRuler {
+	opacity: 0;
+}

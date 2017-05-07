@@ -12,6 +12,10 @@ import { ViewContext } from 'vs/editor/common/view/viewContext';
 import { RenderingContext, RestrictedRenderingContext } from 'vs/editor/common/view/renderingContext';
 import * as viewEvents from 'vs/editor/common/view/viewEvents';
 
+/* Essence */
+import { registerThemingParticipant } from 'vs/platform/theme/common/themeService';
+import { editorBackground } from 'vs/platform/theme/common/colorRegistry';
+
 export class ScrollDecorationViewPart extends ViewPart {
 
 	private _domNode: FastDomNode<HTMLElement>;
@@ -92,3 +96,11 @@ export class ScrollDecorationViewPart extends ViewPart {
 		this._shouldShow ? this._domNode.removeClassName(visibilityClassName) : this._domNode.addClassName(visibilityClassName);
 	}
 }
+
+/* Essence */
+registerThemingParticipant((theme, collector) => {
+	let shadowColor = theme.getColor(editorBackground);
+	if (shadowColor) {
+		collector.addRule(`.monaco-workbench.nopanel.nosidebar .scroll-decoration { box-shadow: inset 0 9px 27px 0 ${shadowColor}, inset 0 36px 72px 0 ${shadowColor}; }`);
+	}
+});

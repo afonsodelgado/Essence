@@ -154,3 +154,9 @@
 	flex: initial;
 	padding-left: 4px;
 }
+
+
+/* Essence */ /* .monaco-workbench.nopanel.nosidebar === zenMode */
+.monaco-workbench.nopanel.nosidebar > .part.editor > .content > .one-editor-silo > .container > .title.tabs {
+	display: none !important;
+}
