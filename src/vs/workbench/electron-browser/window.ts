@@ -204,23 +204,29 @@ export class ElectronWindow extends Themable {
 
 
 		/* Essence */
-		// Allow for easy draggability with the frameless window with META+CTRL+ALT
-		let isDraggable = false, dragTimeout, checkRate = 9;
+		// Allow for easy draggability with the frameless window with META+SHIFT
+		let isDraggable = false, isDragging = false, dragTimeout, checkRate = 9;
 
 		window.document.body.addEventListener(DOM.EventType.KEY_DOWN, (e: KeyboardEvent) => {
-			if (e.altKey === true && e.ctrlKey === true && e.metaKey === true) {
+			if (e.metaKey === true && e.shiftKey === true) {
 				isDraggable = true;
-
-				window.document.body.classList.add('draggable');
 			}
 		});
 
 		window.document.body.addEventListener(DOM.EventType.KEY_UP, (e: KeyboardEvent) => {
 			if (isDraggable === true) {
-				isDraggable = false;
+				isDraggable = isDragging = false;
 				clearTimeout(dragTimeout);
 
 				window.document.body.classList.remove('draggable');
+			}
+		});
+
+		window.document.body.addEventListener(DOM.EventType.MOUSE_MOVE, (e: MouseEvent) => {
+			if (isDraggable === true && isDragging === false) {
+				isDragging = true;
+
+				window.document.body.classList.add('draggable');
 			}
 		});
 
@@ -233,7 +239,7 @@ export class ElectronWindow extends Themable {
 
 			clearTimeout(dragTimeout);
 			dragTimeout = setTimeout(() => {
-				isDraggable = false;
+				isDraggable = isDragging = false;
 
 				window.document.body.classList.remove('draggable');
 			}, checkRate);
