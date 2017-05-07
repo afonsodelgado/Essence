@@ -7,7 +7,7 @@
 	.st1{display:inline;opacity:0.2;fill:#ED1C24;}
 	.st2{display:inline;opacity:0.43;fill:#39B54A;}
 	.st3{fill:#353535;}
-	.st4{fill:#FFFFFF;}
+	.st4{fill:rgba(255,255,255,0.9);}
 	.st5{display:inline;opacity:0.8;fill:#353535;}
 	.st6{display:inline;}
 	.st7{display:inline;opacity:0.8;fill:#321F5A;}
@@ -28,7 +28,7 @@
 	.st22{fill:#BE1E2D;}
 	.st23{display:none;opacity:0.2;}
 	.st24{display:inline;opacity:0.2;}
-	.st25{fill:#656565;}
+	.st25{fill:rgba(0,0,0,0.225);}
 	.st26{fill:#D1D3D4;}
 	.st27{fill:#EEEEEE;}
 	.st28{display:none;fill-rule:evenodd;clip-rule:evenodd;fill:#F4F4F4;}
@@ -49,7 +49,7 @@
 	.st43{fill-rule:evenodd;clip-rule:evenodd;fill:#EEEEEE;}
 	.st44{fill:#321F5A;}
 	.st45{fill:none;stroke:#BCBEC0;stroke-miterlimit:10;}
-	.st46{opacity:0.53;fill:#FFFFFF;}
+	.st46{opacity:0.53;fill:rgba(255,255,255,0.9);}
 	.st47{fill:none;stroke:#ED1C24;stroke-miterlimit:10;}
 	.st48{fill:#ED1C24;}
 	.st49{display:inline;opacity:0.1;fill:#E71E27;}
@@ -59,8 +59,8 @@
 	.st53{display:inline;fill:none;stroke:#ED1C24;stroke-miterlimit:10;}
 	.st54{fill:none;stroke:#2E3192;stroke-miterlimit:10;}
 	.st55{fill:#2E3192;}
-	.st56{fill:none;stroke:#FFF200;stroke-miterlimit:10;}
-	.st57{fill:#FFF200;}
+	.st56{fill:none;stroke:rgba(255,255,255,0.9)200;stroke-miterlimit:10;}
+	.st57{fill:rgba(255,255,255,0.9)200;}
 </style>
 <g id="grids">
 </g>

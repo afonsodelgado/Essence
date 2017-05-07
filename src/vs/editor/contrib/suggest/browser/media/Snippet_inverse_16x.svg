@@ -23,21 +23,21 @@
   <defs
      id="defs4703" />
   <style
-     id="style4696">.icon-canvas-transparent{opacity:0;fill:#f6f6f6}.icon-vs-out{fill:#f6f6f6}.icon-vs-action-orange{fill:#c27d1a}</style>
+     id="style4696">.icon-canvas-transparent{opacity:0;fill:rgba(255,255,255,0.9)}.icon-vs-out{fill:rgba(255,255,255,0.9)}.icon-vs-action-orange{fill:#c27d1a}</style>
   <g
      id="g4724"
      transform="matrix(1.3333333,0,0,1.3333333,-245.99999,-31.999999)">
     <path
        d="m 185,24 11,0 0,12 -11,0 z"
        id="path4528"
-       style="fill:#2d2d30" />
+       style="fill:rgba(0,0,0,0.225)" />
     <path
        d="m 194,33 0,-7 -7,0 0,7 -1,0 0,-8 9,0 0,8 z m -8,1 1,0 0,1 -1,0 z m 2,0 1,0 0,1 -1,0 z m 2,0 1,0 0,1 -1,0 z m 2,0 1,0 0,1 -1,0 z m 2,0 1,0 0,1 -1,0 z"
        id="path4530"
-       style="fill:#c5c5c5" />
+       style="fill:rgba(0,0,0,0.18)" />
     <path
        d="m 187,26 7,0 0,7 -7,0 z"
        id="path4532"
-       style="fill:#2b282e" />
+       style="fill:rgba(0,0,0,0.225)" />
   </g>
 </svg>
