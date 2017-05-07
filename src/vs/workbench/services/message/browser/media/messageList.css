@@ -26,12 +26,12 @@
 }
 
 .global-message-list.transition {
-	-webkit-transition:	top 200ms linear;
-	-ms-transition:		top 200ms linear;
-	-moz-transition:	top 200ms linear;
-	-khtml-transition:	top 200ms linear;
-	-o-transition:		top 200ms linear;
-	transition:			top 200ms linear;
+	-webkit-transition:	top 200ms ease-in-out;
+	-ms-transition:		top 200ms ease-in-out;
+	-moz-transition:	top 200ms ease-in-out;
+	-khtml-transition:	top 200ms ease-in-out;
+	-o-transition:		top 200ms ease-in-out;
+	transition:			top 200ms ease-in-out;
 }
 
 .global-message-list ul.message-list {

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 .progress-container {
 	width: 100%;
-	height: 5px;	
+	height: 5px;
 }
 
 .progress-container .progress-bit {
@@ -22,11 +22,11 @@
 
 .progress-container.discrete .progress-bit {
 	left: 0;
-	transition: width 100ms linear;
-	-webkit-transition: width 100ms linear;
-	-o-transition: width 100ms linear;
-	-moz-transition: width 100ms linear;
-	-ms-transition: width 100ms linear;
+	transition: width 100ms ease-in-out;
+	-webkit-transition: width 100ms ease-in-out;
+	-o-transition: width 100ms ease-in-out;
+	-moz-transition: width 100ms ease-in-out;
+	-ms-transition: width 100ms ease-in-out;
 }
 
 .progress-container.discrete.done .progress-bit {
@@ -37,27 +37,27 @@
 	animation-name: progress;
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	animation-timing-function: ease-in-out;
 	-ms-animation-name: progress;
 	-ms-animation-duration: 4s;
 	-ms-animation-iteration-count: infinite;
-	-ms-animation-timing-function: linear;
+	-ms-animation-timing-function: ease-in-out;
 	-webkit-animation-name: progress;
 	-webkit-animation-duration: 4s;
 	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
+	-webkit-animation-timing-function: ease-in-out;
 	-moz-animation-name: progress;
 	-moz-animation-duration: 4s;
 	-moz-animation-iteration-count: infinite;
-	-moz-animation-timing-function: linear;
+	-moz-animation-timing-function: ease-in-out;
 }
 
 .progress-container.infinite.done .progress-bit {
-	transition: opacity 200ms linear;
-	-webkit-transition: opacity 200ms linear;
-	-o-transition: opacity 200ms linear;
-	-moz-transition: opacity 200ms linear;
-	-ms-transition: opacity 200ms linear;
+	transition: opacity 200ms ease-in-out;
+	-webkit-transition: opacity 200ms ease-in-out;
+	-o-transition: opacity 200ms ease-in-out;
+	-moz-transition: opacity 200ms ease-in-out;
+	-ms-transition: opacity 200ms ease-in-out;
 }
 
 @keyframes progress { from { left: 0; width: 2%; }	50% { left: 50%; width: 5%; } to { left: 98%; width: 2%; } }

@@ -37,11 +37,11 @@
 	overflow: hidden;
 	line-height: 19px;
 
-	-webkit-transition: top 200ms linear;
-	-o-transition: top 200ms linear;
-	-moz-transition: top 200ms linear;
-	-ms-transition: top 200ms linear;
-	transition: top 200ms linear;
+	-webkit-transition: top 200ms ease-in-out;
+	-o-transition: top 200ms ease-in-out;
+	-moz-transition: top 200ms ease-in-out;
+	-ms-transition: top 200ms ease-in-out;
+	transition: top 200ms ease-in-out;
 
 	padding: 0 4px;
 }

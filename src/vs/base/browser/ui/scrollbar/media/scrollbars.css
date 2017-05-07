@@ -44,21 +44,21 @@
 	/* Background rule added for IE9 - to allow clicks on dom node */
 	background:rgba(0,0,0,0);
 
-	-webkit-transition: opacity 100ms linear;
-	-o-transition: opacity 100ms linear;
-	-moz-transition: opacity 100ms linear;
-	-ms-transition: opacity 100ms linear;
-	transition: opacity 100ms linear;
+	-webkit-transition: opacity 100ms ease-in-out;
+	-o-transition: opacity 100ms ease-in-out;
+	-moz-transition: opacity 100ms ease-in-out;
+	-ms-transition: opacity 100ms ease-in-out;
+	transition: opacity 100ms ease-in-out;
 }
 .monaco-scrollable-element > .invisible {
 	opacity: 0;
 }
 .monaco-scrollable-element > .invisible.fade {
-	-webkit-transition: opacity 800ms linear;
-	-o-transition: opacity 800ms linear;
-	-moz-transition: opacity 800ms linear;
-	-ms-transition: opacity 800ms linear;
-	transition: opacity 800ms linear;
+	-webkit-transition: opacity 800ms ease-in-out;
+	-o-transition: opacity 800ms ease-in-out;
+	-moz-transition: opacity 800ms ease-in-out;
+	-ms-transition: opacity 800ms ease-in-out;
+	transition: opacity 800ms ease-in-out;
 }
 
 /* Scrollable Content Inset Shadow */

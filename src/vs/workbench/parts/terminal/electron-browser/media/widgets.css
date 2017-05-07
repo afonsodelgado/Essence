@@ -17,7 +17,7 @@
 	font-size: 14px;
 	line-height: 19px;
 	padding: 4px 5px;
-	animation: fadein 100ms linear;
+	animation: fadein 100ms ease-in-out;
 	background-color: #F3F3F3;
 	border: 1px solid #CCC;
 }
