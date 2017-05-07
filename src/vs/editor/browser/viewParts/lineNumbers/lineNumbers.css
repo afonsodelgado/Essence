@@ -38,13 +38,13 @@
 }
 
 
-/* Essence */
-.monaco-workbench.no-panel.no-sidebar .margin-view-overlays .line-numbers {
+/* Essence */ /* .monaco-workbench.nopanel.nosidebar === zenMode */
+.monaco-workbench.nopanel.nosidebar .margin-view-overlays .line-numbers {
 	opacity: 0;
 	transition: opacity 0.18s ease-in-out;
 	will-change: opacity;
 }
 
-.monaco-workbench.no-panel.no-sidebar .margin-view-overlays .line-numbers:hover {
+.monaco-workbench.nopanel.nosidebar .margin-view-overlays .line-numbers:hover {
 	opacity: 1;
 }
