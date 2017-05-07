@@ -10,13 +10,13 @@
 
 	/* Essence */
 	height: 18px;
-	box-shadow: #DDD 0 2px 12px -6px inset;
+	box-shadow: rgba(221,221,221, 0.9) 0 2px 12px -6px inset;
 	transition: opacity 0.36s ease-in-out;
 }
 
 .monaco-editor.vs-dark .scroll-decoration {
 	/* Essence */
-	box-shadow: #DDD 0 2px 12px -6px inset;
+	box-shadow: rgba(0,0,0,0.9) 0 2px 12px -6px inset;
 }
 
 .monaco-editor.hc-black .scroll-decoration {
