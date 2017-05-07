@@ -10,5 +10,5 @@
 }
 
 .octicon-animation-spin {
-	animation: octicon-spin 2s linear infinite;
+	animation: octicon-spin 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
 }

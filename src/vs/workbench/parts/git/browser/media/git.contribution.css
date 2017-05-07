@@ -84,7 +84,7 @@
 }
 
 .monaco-shell .git-action.live-sync.icon.loading {
-	animation: spin-forever 1.6s linear infinite;
+	animation: spin-forever 1.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
 }
 
 @keyframes spin-forever { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -124,7 +124,7 @@
 }
 
 .monaco-shell .git-statusbar-group > .git-statusbar-sync-item.syncing > .octicon {
-	animation: 2s ease-in-out infinite spin;
+	animation: 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite spin;
 }
 
 .monaco-shell .git-statusbar-group > .git-statusbar-sync-item.disabled > .ahead-behind,

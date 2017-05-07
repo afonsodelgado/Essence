@@ -37,11 +37,11 @@
 	overflow: hidden;
 	line-height: 19px;
 
-	-webkit-transition: top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-o-transition: top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-moz-transition: top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-ms-transition: top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	transition: top 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-webkit-transition: top 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-o-transition: top 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-moz-transition: top 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-ms-transition: top 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	transition: top 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
 	padding: 0 4px;
 }
@@ -353,7 +353,7 @@
 /* Essence */
 .monaco-workbench.nopanel.nosidebar .editor-widget.find-widget {
 	opacity: 0;
-	transition: opacity 0.18s ease-in-out !important;
+	transition: opacity 0.18s cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
 }
 
 .monaco-workbench.nopanel.nosidebar .editor-widget.find-widget.visible {

@@ -54,11 +54,11 @@
 	opacity: 0;
 }
 .monaco-scrollable-element > .invisible.fade {
-	-webkit-transition: opacity 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-o-transition: opacity 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-moz-transition: opacity 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-ms-transition: opacity 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	transition: opacity 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-webkit-transition: opacity 540ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-o-transition: opacity 540ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-moz-transition: opacity 540ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-ms-transition: opacity 540ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	transition: opacity 540ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 /* Scrollable Content Inset Shadow */

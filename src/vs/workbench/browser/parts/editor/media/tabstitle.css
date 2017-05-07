@@ -128,7 +128,7 @@
 
 .monaco-workbench > .part.editor > .content > .one-editor-silo > .container > .title .tabs-container > .tab.close-button-off {
 	padding-right: 12px;
-	transition: padding-right ease-in-out 100ms;
+	transition: padding-right cubic-bezier(0.455, 0.03, 0.515, 0.955) 100ms;
 }
 
 .monaco-workbench > .part.editor > .content > .one-editor-silo > .container > .title .tabs-container > .tab.close-button-off.dirty {

@@ -53,11 +53,11 @@
 }
 
 .progress-container.infinite.done .progress-bit {
-	transition: opacity 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-webkit-transition: opacity 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-o-transition: opacity 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-moz-transition: opacity 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-ms-transition: opacity 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-webkit-transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-o-transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-moz-transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	-ms-transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 @keyframes progress { from { left: 0; width: 2%; }	50% { left: 50%; width: 5%; } to { left: 98%; width: 2%; } }
