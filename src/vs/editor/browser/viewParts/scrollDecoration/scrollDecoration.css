@@ -7,12 +7,15 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 6px;
-	box-shadow: #DDD 0 6px 6px -6px inset;
+
+	/* Essence */
+	height: 18px;
+	box-shadow: #DDD 0 2px 12px -6px inset;
 }
 
 .monaco-editor.vs-dark .scroll-decoration {
-	box-shadow: #000 0 6px 6px -6px inset;
+	/* Essence */
+	box-shadow: #DDD 0 2px 12px -6px inset;
 }
 
 .monaco-editor.hc-black .scroll-decoration {
