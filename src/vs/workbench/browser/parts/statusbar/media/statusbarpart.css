@@ -21,6 +21,9 @@
 	line-height: 22px;
 	height: 100%;
 	vertical-align: top;
+
+	/* Essence */
+	transition: all 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .monaco-workbench > .part.statusbar > .statusbar-item.left > :first-child {
