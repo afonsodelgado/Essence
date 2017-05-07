@@ -10,6 +10,10 @@
 	font-size: 12px;
 	padding: 0 10px;
 	overflow: hidden;
+
+	/* Essence */
+	-webkit-app-region: drag;
+	cursor: move;
 }
 
 .monaco-workbench > .part.statusbar > .statusbar-item {
