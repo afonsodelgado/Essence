@@ -215,6 +215,9 @@ export class MessageList {
 		// Lazily create, otherwise clear old
 		if (!this.messageListContainer) {
 			this.messageListContainer = $('.global-message-list').appendTo(container);
+
+			/* Essence */
+			this.messageListContainer.addClass('animated');
 		} else {
 			$(this.messageListContainer).empty();
 			$(this.messageListContainer).removeClass('transition');
@@ -222,7 +225,7 @@ export class MessageList {
 
 		// Support animation for messages by moving the container out of view and then in
 		if (animate) {
-			$(this.messageListContainer).style('top', '-35px');
+			$(this.messageListContainer).style('opacity', '0');
 		}
 
 		// Render Messages as List Items
@@ -258,12 +261,7 @@ export class MessageList {
 
 		$(this.messageListContainer).removeClass('transition'); // disable any animations
 
-		let position = 0;
-		if (!browser.isFullscreen() && DOM.hasClass(this.container, 'titlebar-style-custom')) {
-			position = 22 / browser.getZoomFactor(); // adjust the position based on title bar size and zoom factor
-		}
-
-		$(this.messageListContainer).style('top', `${position}px`);
+		$(this.messageListContainer).style('opacity', '1');
 	}
 
 	private renderMessage(message: IMessageEntry, container: Builder, total: number, delta: number): void {
