@@ -22,10 +22,11 @@ interface IConfiguration extends IWindowConfiguration {
 }
 
 export class SettingsChangeRelauncher implements IWorkbenchContribution {
+	/* Essence */
+	private titleBarStyle: 'default' | 'native' | 'custom';
 
 	private toDispose: IDisposable[] = [];
 
-	private titleBarStyle: 'native' | 'custom';
 	private nativeTabs: boolean;
 	private updateChannel: string;
 	private enableCrashReporter: boolean;
@@ -51,7 +52,7 @@ export class SettingsChangeRelauncher implements IWorkbenchContribution {
 		let changed = false;
 
 		// Titlebar style
-		if (config.window && config.window.titleBarStyle !== this.titleBarStyle && (config.window.titleBarStyle === 'native' || config.window.titleBarStyle === 'custom')) {
+		if (config.window && config.window.titleBarStyle !== this.titleBarStyle && (config.window.titleBarStyle === 'default' || config.window.titleBarStyle === 'native' || config.window.titleBarStyle === 'custom')) {
 			this.titleBarStyle = config.window.titleBarStyle;
 			changed = true;
 		}

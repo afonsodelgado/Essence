@@ -277,10 +277,11 @@ if (isWindows) {
 }
 
 if (isMacintosh) {
+	/* Essence */
 	properties['window.titleBarStyle'] = {
 		'type': 'string',
-		'enum': ['native', 'custom'],
-		'default': 'custom',
+		'enum': ['default', 'native', 'custom'],
+		'default': 'default',
 		'description': nls.localize('titleBarStyle', "Adjust the appearance of the window title bar. Changes require a full restart to apply.")
 	};
 

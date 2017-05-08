@@ -94,12 +94,14 @@ export interface IWindowService {
 export type MenuBarVisibility = 'default' | 'visible' | 'toggle' | 'hidden';
 
 export interface IWindowSettings {
+	/* Essence */
+	titleBarStyle: 'default' | 'native' | 'custom';
+
 	openFilesInNewWindow: 'on' | 'off' | 'default';
 	openFoldersInNewWindow: 'on' | 'off' | 'default';
 	reopenFolders: 'all' | 'one' | 'none';
 	restoreFullscreen: boolean;
 	zoomLevel: number;
-	titleBarStyle: 'native' | 'custom';
 	autoDetectHighContrast: boolean;
 	menuBarVisibility: MenuBarVisibility;
 	newWindowDimensions: 'default' | 'inherit' | 'maximized' | 'fullscreen';
