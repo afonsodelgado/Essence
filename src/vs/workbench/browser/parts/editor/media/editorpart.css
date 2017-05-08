@@ -24,6 +24,7 @@
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dppx) {
 	.monaco-workbench > .part.editor {
-		background-size: 260px 260px;
+		/* Essence */
+		background-size: 130px 130px;
 	}
 }
