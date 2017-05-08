@@ -1354,6 +1354,7 @@ export class Builder implements IDisposable {
 	 *  Returns true if the current element of the builder is hidden.
 	 */
 	public isHidden(): boolean {
+		/* Essence */
 		return this.hasClass('builder-hidden') || this.hasClass('builder-hidden-animated') || this.currentElement.style.display === 'none';
 	}
 
@@ -1365,7 +1366,12 @@ export class Builder implements IDisposable {
 		// Cancel any pending showDelayed() invocation
 		this.cancelVisibilityPromise();
 
-		this.swapClass('builder-visible', 'builder-hidden');
+		/* Essence */
+		if (this.hasClass('builder-hidden')) {
+			this.swapClass('builder-visible', 'builder-hidden');
+		} else {
+			this.removeClass('builder-hidden-animated');
+		}
 
 		if (this.isHidden()) {
 			this.attr('aria-hidden', 'true');
