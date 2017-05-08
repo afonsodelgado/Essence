@@ -43,8 +43,18 @@
 	cursor: pointer;
 	height: 35px;
 	box-sizing: border-box;
-	border: 1px solid transparent;
 	padding-left: 10px;
+
+	/* Essence */
+	border-left: 1px solid;
+	border-right: none;
+	border-top: none;
+	border-bottom: none;
+}
+
+/* Essence */
+.monaco-workbench > .part.editor > .content > .one-editor-silo > .container > .title .tabs-container > .tab:first-child {
+	border-left-color: transparent;
 }
 
 .monaco-workbench > .part.editor > .content > .one-editor-silo > .container > .title .tabs-container > .tab.close-button-left {

@@ -43,6 +43,9 @@ import { IThemeService, registerThemingParticipant, ITheme, ICssStyleCollector }
 import { TAB_INACTIVE_BACKGROUND, TAB_ACTIVE_BACKGROUND, TAB_ACTIVE_FOREGROUND, TAB_INACTIVE_FOREGROUND, TAB_BORDER, EDITOR_DRAG_AND_DROP_BACKGROUND } from 'vs/workbench/common/theme';
 import { activeContrastBorder, contrastBorder } from 'vs/platform/theme/common/colorRegistry';
 
+/* Essence */
+import { Color } from 'vs/base/common/color';
+
 interface IEditorInputLabel {
 	editor: IEditorInput;
 	name: string;
@@ -272,7 +275,6 @@ export class TabsTitleControl extends TitleControl {
 				// Container
 				tabContainer.setAttribute('aria-label', `${name}, tab`);
 				tabContainer.title = title;
-				tabContainer.style.borderLeftColor = (index !== 0) ? (this.getColor(contrastBorder) || this.getColor(TAB_BORDER)) : null;
 				tabContainer.style.borderRightColor = (index === editorsOfGroup.length - 1) ? (this.getColor(contrastBorder) || this.getColor(TAB_BORDER)) : null;
 				tabContainer.style.outlineColor = this.getColor(activeContrastBorder);
 
@@ -285,6 +287,12 @@ export class TabsTitleControl extends TitleControl {
 				// Label
 				const tabLabel = this.editorLabels[index];
 				tabLabel.setLabel({ name, description, resource: toResource(editor, { supportSideBySide: true }) }, { extraClasses: ['tab-label'], italic: !isPinned });
+
+				/* Essence */
+				const tabBorderColor = this.getColor(TAB_BORDER) || this.getColor(TAB_ACTIVE_BACKGROUND);
+				const tabBorderColorTransparent = Color.fromHex(tabBorderColor + '00').toString();
+				tabContainer.style.borderRightColor = tabContainer.style.borderLeftColor = null;
+				tabContainer.style.borderImage = `linear-gradient(to bottom, ${tabBorderColor}, ${tabBorderColor} 54%, ${tabBorderColorTransparent}) 1 100%`;
 
 				// Active state
 				if (isTabActive) {
