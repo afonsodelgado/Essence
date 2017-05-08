@@ -1285,8 +1285,15 @@ export class Builder implements IDisposable {
 	 *  Shows the current element of the builder.
 	 */
 	public show(): Builder {
-		if (this.hasClass('builder-hidden')) {
-			this.removeClass('builder-hidden');
+		/* Essence */
+		if (this.hasClass('animated')) {
+			if (this.hasClass('builder-hidden-animated')) {
+				this.removeClass('builder-hidden-animated');
+			}
+		} else {
+			if (this.hasClass('builder-hidden')) {
+				this.removeClass('builder-hidden');
+			}
 		}
 
 		this.attr('aria-hidden', 'false');
@@ -1324,9 +1331,17 @@ export class Builder implements IDisposable {
 	 *  Hides the current element of the builder.
 	 */
 	public hide(): Builder {
-		if (!this.hasClass('builder-hidden')) {
-			this.addClass('builder-hidden');
+		/* Essence */
+		if (this.hasClass('animated')) {
+			if (!this.hasClass('builder-hidden-animated')) {
+				this.addClass('builder-hidden-animated');
+			}
+		} else {
+			if (!this.hasClass('builder-hidden')) {
+				this.addClass('builder-hidden');
+			}
 		}
+
 		this.attr('aria-hidden', 'true');
 
 		// Cancel any pending showDelayed() invocation
@@ -1339,7 +1354,7 @@ export class Builder implements IDisposable {
 	 *  Returns true if the current element of the builder is hidden.
 	 */
 	public isHidden(): boolean {
-		return this.hasClass('builder-hidden') || this.currentElement.style.display === 'none';
+		return this.hasClass('builder-hidden') || this.hasClass('builder-hidden-animated') || this.currentElement.style.display === 'none';
 	}
 
 	/**

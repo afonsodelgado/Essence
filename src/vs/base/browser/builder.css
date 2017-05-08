@@ -12,3 +12,9 @@
 	display: inherit;
 	visibility: visible;
 }
+
+
+/* Essence */
+.builder-hidden-animated {
+	opacity: 0 !important;
+}
