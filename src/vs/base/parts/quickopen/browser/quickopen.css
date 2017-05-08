@@ -7,9 +7,12 @@
 	position: absolute;
 	width: 600px;
 	z-index: 2000;
-	padding-bottom: 6px;
 	left: 50%;
 	margin-left: -300px;
+
+	/* Essence */
+	padding: 9px;
+	top: 36px !important;
 }
 
 .quick-open-widget .progress-container {
@@ -37,6 +40,9 @@
 
 .quick-open-widget .quick-open-tree {
 	line-height: 1.8em;
+
+	/* Essence */
+	padding: 5px 0;
 }
 
 .quick-open-widget .quick-open-tree .monaco-tree-row  > .content > .sub-content {
@@ -89,12 +95,9 @@
 
 .quick-open-widget .quick-open-tree .results-group {
 	margin-right: 18px;
-}
 
-.quick-open-widget .quick-open-tree .monaco-tree-row.focused > .content.has-actions > .results-group,
-.quick-open-widget .quick-open-tree .monaco-tree-row:hover:not(.highlighted) > .content.has-actions > .results-group,
-.quick-open-widget .quick-open-tree .focused .monaco-tree-row.focused > .content.has-actions > .results-group {
-	margin-right: 0px;
+	/* Essence */
+	float: right;
 }
 
 .quick-open-widget .quick-open-tree .results-group-separator {
@@ -151,4 +154,23 @@
 
 .quick-open-widget .quick-open-tree .monaco-highlighted-label .highlight {
 	font-weight: bold;
+}
+
+
+
+
+/* Essence */
+.quick-open-widget .quick-open-tree .content.has-actions .results-group {
+	margin-right: 34px; /* push more to the right if we have actions */
+}
+
+.quick-open-widget,
+.defineKeybindingWidget,
+.accessibilityHelpWidget {
+	border-radius: 4.5px;
+	box-shadow: 0 0 144px rgba(0, 0, 0, 0.09), 0 18px 180px rgba(0, 0, 0, 0.045) !important
+}
+
+.quick-open-widget .monaco-tree-row {
+	border-radius: 2px;
 }

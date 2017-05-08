@@ -44,6 +44,11 @@
 	transition: top 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
 	padding: 0 4px;
+
+	/* Essence */
+	border: 1.62px solid rgba(0,0,0,0.0675);
+	border-radius: 1.62px;
+	box-shadow: 0 0.54px 1.12px rgba(0,0,0,0.0225)
 }
 /* Find widget when replace is toggled on */
 .monaco-editor .find-widget.replaceToggled {
@@ -56,7 +61,7 @@
 
 .monaco-editor .find-widget.visible,
 .monaco-editor .find-widget.replaceToggled.visible {
-	top: 0;
+	top: 18px !important;
 }
 
 .monaco-editor .find-widget .monaco-inputbox .input {

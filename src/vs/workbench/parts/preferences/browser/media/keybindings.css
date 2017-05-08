@@ -4,8 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 .defineKeybindingWidget {
-	padding: 10px;
 	position: absolute;
+
+	/* Essence */
+	padding: 27px;
 }
 
 .defineKeybindingWidget .message {
