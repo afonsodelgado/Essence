@@ -11,8 +11,6 @@ import { ViewPart } from 'vs/editor/browser/view/viewPart';
 import { ViewContext } from 'vs/editor/common/view/viewContext';
 import { RenderingContext, RestrictedRenderingContext } from 'vs/editor/common/view/renderingContext';
 import * as viewEvents from 'vs/editor/common/view/viewEvents';
-import { registerThemingParticipant } from 'vs/platform/theme/common/themeService';
-import { scrollbarShadow } from 'vs/platform/theme/common/colorRegistry';
 
 /* Essence */
 import { registerThemingParticipant } from 'vs/platform/theme/common/themeService';
