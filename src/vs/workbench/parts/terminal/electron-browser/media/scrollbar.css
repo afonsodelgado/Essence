@@ -5,7 +5,6 @@
 
 .monaco-workbench .panel.integrated-terminal .xterm-viewport {
 	/* Use the hack presented in http://stackoverflow.com/a/38748186/1156119 to get opacity transitions working on the scrollbar */
-	background-color: rgba(121, 121, 121, 0);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	transition: background-color 540ms cubic-bezier(0.455, 0.03, 0.515, 0.955);

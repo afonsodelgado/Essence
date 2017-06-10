@@ -11,6 +11,8 @@ import { ViewPart } from 'vs/editor/browser/view/viewPart';
 import { ViewContext } from 'vs/editor/common/view/viewContext';
 import { RenderingContext, RestrictedRenderingContext } from 'vs/editor/common/view/renderingContext';
 import * as viewEvents from 'vs/editor/common/view/viewEvents';
+import { registerThemingParticipant } from 'vs/platform/theme/common/themeService';
+import { scrollbarShadow } from 'vs/platform/theme/common/colorRegistry';
 
 /* Essence */
 import { registerThemingParticipant } from 'vs/platform/theme/common/themeService';
@@ -36,6 +38,9 @@ export class ScrollDecorationViewPart extends ViewPart {
 
 		/* Essence */
 		this._domNode.setClassName('scroll-decoration');
+
+		this._domNode.setAttribute('role', 'presentation');
+		this._domNode.setAttribute('aria-hidden', 'true');
 	}
 
 	public dispose(): void {
@@ -69,7 +74,7 @@ export class ScrollDecorationViewPart extends ViewPart {
 
 	public onConfigurationChanged(e: viewEvents.ViewConfigurationChangedEvent): boolean {
 		let shouldRender = false;
-		if (e.viewInfo.scrollbar) {
+		if (e.viewInfo) {
 			this._useShadows = this._context.configuration.editor.viewInfo.scrollbar.useShadows;
 		}
 		if (e.layoutInfo) {
@@ -104,3 +109,8 @@ registerThemingParticipant((theme, collector) => {
 		collector.addRule(`.monaco-workbench.nopanel.nosidebar .scroll-decoration { box-shadow: inset 0 9px 27px 0 ${shadowColor}, inset 0 36px 72px 0 ${shadowColor}; }`);
 	}
 });
+
+// registerThemingParticipant((theme, collector) => {
+// 	let shadow = theme.getColor(scrollbarShadow);
+// 	if (shadow) {
+// 		collector.addRule(`.monaco-editor .scroll-decoration { box-shadow: ${shadow} 0 6px 6px -6px inset; }`);

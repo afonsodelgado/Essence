@@ -13,7 +13,6 @@
 	position: absolute;
 	left: 0;
 	display: none;
-	background-color: #0E70C0;
 }
 
 .progress-container.active .progress-bit {
@@ -50,14 +49,6 @@
 	-moz-animation-duration: 4s;
 	-moz-animation-iteration-count: infinite;
 	-moz-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-
-.progress-container.infinite.done .progress-bit {
-	transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-webkit-transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-o-transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-moz-transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	-ms-transition: opacity 180ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 @keyframes progress { from { left: 0; width: 2%; }	50% { left: 50%; width: 5%; } to { left: 98%; width: 2%; } }
