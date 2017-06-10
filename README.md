@@ -3,7 +3,7 @@
 
 <br><br><br><br><br><br><br><br>
 
-<p>A Visual Studio Code fork, Essence features a frameless window, visual improvements (taking advantage of the new color themes), and the specific visual mode showcased above toggled with Code's own Zen Mode.</p>
+<p>A Visual Studio Code fork, Essence features a frameless window, visual improvements (taking advantage of the new color themes), and the enhanced Zen Mode you see above. Press <code>Shift</code> + <code>Cmd</code> to drag a window.</p>
 
 <br>
 
