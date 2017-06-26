@@ -77,6 +77,7 @@ export class TreeView extends CollapsibleViewletView {
 		DOM.addClass(this.treeContainer, 'tree-explorer-viewlet-tree-view');
 
 		this.tree = this.createViewer($(this.treeContainer));
+		this.setInput();
 	}
 
 	protected changeState(state: CollapsibleState): void {
@@ -128,21 +129,26 @@ export class TreeView extends CollapsibleViewletView {
 		return super.setVisible(visible);
 	}
 
-	public setInput(): TPromise<void> {
-		if (this.listenToDataProvider()) {
-			this.treeInputPromise = this.tree.setInput(new Root());
+	private setInput(): TPromise<void> {
+		if (this.tree) {
+			if (!this.treeInputPromise) {
+				if (this.listenToDataProvider()) {
+					this.treeInputPromise = this.tree.setInput(new Root());
+				} else {
+					this.treeInputPromise = new TPromise<void>((c, e) => {
+						this.dataProviderRegisteredListener = ViewsRegistry.onTreeViewDataProviderRegistered(id => {
+							if (this.id === id) {
+								if (this.listenToDataProvider()) {
+									this.tree.setInput(new Root()).then(() => c(null));
+									this.dataProviderRegisteredListener.dispose();
+								}
+							}
+						});
+					});
+				}
+			}
 			return this.treeInputPromise;
 		}
-		this.treeInputPromise = new TPromise<void>((c, e) => {
-			this.dataProviderRegisteredListener = ViewsRegistry.onTreeViewDataProviderRegistered(id => {
-				if (this.id === id) {
-					if (this.listenToDataProvider()) {
-						this.tree.setInput(new Root()).then(() => c(null));
-						this.dataProviderRegisteredListener.dispose();
-					}
-				}
-			});
-		});
 		return TPromise.as(null);
 	}
 
