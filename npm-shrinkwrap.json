@@ -1,6 +1,6 @@
 {
   "name": "code-essence",
-  "version": "1.13.0",
+  "version": "1.13.1",
   "lockfileVersion": 1,
   "dependencies": {
     "@gulp-sourcemaps/map-sources": {
