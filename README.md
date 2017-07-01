@@ -7,4 +7,4 @@
 
 <br>
 
-[Download the latest version (1.12.1) signed binary (.app; macOS only) via GitHub releases](https://github.com/flagello/essence/releases/latest), or [build and run from source](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run-from-source).
+[Download the latest version (1.13.1) signed binary (.app; macOS only) via GitHub releases](https://github.com/flagello/essence/releases/latest), or [build and run from source](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run-from-source).
