@@ -246,12 +246,14 @@ function packageTask(platform, arch, opts) {
 			.pipe(nlsDev.createAdditionalLanguageFiles(languages, path.join(__dirname, '..', 'i18n')))
 			.pipe(nlsFilter.restore);
 
-		const marketplaceExtensions = es.merge(...builtInExtensions.map(extension => {
-			return ext.src(extension.name, extension.version)
-				.pipe(rename(p => p.dirname = `extensions/${extension.name}/${p.dirname}`));
-		}));
+		// FIXME: https://github.com/Microsoft/vscode/issues/29487
 
-		const sources = es.merge(src, extensions, marketplaceExtensions)
+		// const marketplaceExtensions = es.merge(...builtInExtensions.map(extension => {
+		// 	return ext.src(extension.name, extension.version)
+		// 		.pipe(rename(p => p.dirname = `extensions/${extension.name}/${p.dirname}`));
+		// }));
+
+		const sources = es.merge(src, extensions)
 			.pipe(filter(['**', '!**/*.js.map']));
 
 		let version = packageJson.version;
